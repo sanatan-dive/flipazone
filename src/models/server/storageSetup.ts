@@ -1,16 +1,16 @@
 import { Permission } from "node-appwrite";
-import { questionAttachementBucket } from "../name";
+import { questionAttachmentBucket } from "../name";
 import { storage } from "./config";
 
 export default async function getOrCreateStorage() {
     try {
-        await storage.getBucket(questionAttachementBucket);
+        await storage.getBucket(questionAttachmentBucket);
         console.log("Storage Connected");
     } catch (error) {
         try {
             await storage.createBucket(
-                questionAttachementBucket,
-                questionAttachementBucket,
+                questionAttachmentBucket,
+                questionAttachmentBucket,
                 [
                     Permission.create("users"),
                     Permission.read("any"),
